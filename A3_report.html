@@ -1,0 +1,173 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>Vis & Society Assignment 3</title>
+	<link rel="stylesheet" href="https://vis-society.github.io/assignments/report.css" />
+</head>
+
+<body>
+	<header>
+		<h1>
+			<small>Assignment 3</small>
+			Visualization Critique & Redesign
+		</h1>
+
+		<p>
+			<strong>Adam Rashid</strong> — <em>abrashid@mit.edu</em>
+		</p>
+	</header>
+
+	<main>
+		<section>
+			<h2>Reading & Critique</h2>
+
+			<figure>
+				<img src="https://vis-society.github.io/assets/imgs/covid-spiral.png" width="50%" height="50%" alt="" />
+			</figure>
+
+			<p>
+				Insights about the data/visualization:
+			</p>
+
+			<ul>
+				<li>This visualization is displaying the axis of time in a spiral rather than in a line</li>
+				<li>It displays number of covid cases as a symmetric area around the spiraling axis, at least i think it's supposed to be symmetrical even if there are small details that aren't</li>
+				<li>I am able to understand that new Covid cases picked up from mid November 2020 to January 2021, and then got really low in June 2021 until it started increasing</li>
+				<li>The number of New Covid cases has begun to spike in Jan 2022 even larger than the start of Covid in 2020 and 2021, emphasizing the Omicron wave</li>
+			</ul>
+
+			<p>
+				Design Critique:
+			</p>
+
+			<p>
+				While the spiral design is visually striking and novel, it uses an unaligned, symmetric area encoding along the spiral path, which makes it harder to precisely compare case counts across different months or years. The choice of a spiral effectively underscores a “winding timeline,” but it relies on less-effective visual encodings (curvature and radial position). The spiral’s design, while innovative, creates confusion by using a symmetrical area graph that makes it difficult to precisely compare peaks from different years. For instance, although the 2022 surge is visibly the highest, the design does not allow for an accurate visual comparison of its magnitude relative to the 2021 peak. Moreover, the legend—particularly the triangle representing a specific case count—is not well integrated with the spiral, making it challenging for viewers to understand the scale of cases directly from the plot. While important elements such as year, month, and case numbers are present, their placement and scaling do not lend themselves to an intuitive reading of the data. The title and labels fall short in defining critical details—such as how 'cases' are measured—which further complicates comprehension for a non-expert audience typical of a major publication like The New York Times.
+			</p>
+			<p>
+				Overall, while the visualization succeeds in capturing attention and conveys a general narrative of a dramatic surge in cases during the Omicron period, its design choices hinder effective communication. The unorthodox layout and sparse labeling require extra effort to decipher, and the encoding of data does not clearly reveal the comparative scale of each wave. The intended takeaway—that the Omicron surge is unprecedented—gets lost amidst the clutter and misaligned visual cues. A design that emphasizes clear, directly comparable elements, such as overlapping line charts or a more conventional radial layout with improved legend integration, might better serve the audience by making the key trends immediately evident without the need for prolonged analysis.
+			</p>
+		</section>
+
+		<section>
+			<h2>Visualization Sketches</h2>
+
+      <figure>
+				<img src="plots/sketch1.png" width="80%" height="80%" alt="" />
+				<figcaption>
+          Each dot represents the average new COVID-19 cases for a given time period, with its distance from the center corresponding to case magnitude (dotted circles mark 100k, 300k, and 500k). The radial lines indicate approximate months (Jan, Apr, Jul, Oct), and the colors distinguish the year—blue for 2020, orange for 2021, and red for 2022—highlighting how case levels shifted and grew across these three years.
+				</figcaption>
+			</figure>
+
+			<p>
+				Design Rationale for Sketch 1:
+			</p>
+
+			<ul>
+				<li>Radial Dot Distribution: This redesign trades the spiral layout for a simpler radial approach, where each dot’s distance from the center encodes the magnitude of weekly or monthly COVID-19 cases. The aim is to preserve a circular concept of time (e.g., months around the axis) while making it clearer how far each data point lies from the origin.</li>
+				<li>Reference Circles and Month Lines: Concentric dotted circles mark thresholds (e.g., 100k, 300k, 500k), allowing for a quick read on whether a data point exceeds a certain case count. Radial lines at roughly January, April, July, and October give viewers an immediate sense of where each point falls in the calendar year, helping them locate peaks and troughs more readily.</li>
+				<li>Color-Coding by Year:
+					Using distinct colors (blue, orange, red) for 2020, 2021, and 2022 visually separates the data without requiring the viewer to interpret multiple overlapping lines. This color scheme facilitates quick cross-year comparisons of which months had higher case counts and whether certain waves outstripped others.
+				</li>
+				<li>Critique and Future Exploration:
+					Although the discrete dots and reference circles help reveal differences in case counts, some radial distortion remains—particularly if viewers are less accustomed to reading values by distance rather than height on a conventional axis. Additional labeled rings or an alternative layout might offer greater precision. In the next iteration, I want to try a more linear approach.
+					</li>
+			</ul>
+
+			<figure>
+				<img src="plots/sketch2.png" width="100%" height="100%" alt="" />
+				<figcaption>
+					This line chart illustrates the progression of new COVID-19 cases from 2020 through early 2022. Each year is color-coded (blue for 2020, orange for 2021, and red for 2022), with the y-axis showing approximate daily case counts and the x-axis marking key dates. Notable milestones such as the initial lockdown, the Delta wave, and the Omicron spike are labeled to provide contextual highlights, emphasizing how case numbers have evolved and ultimately surged with Omicron.
+				</figcaption>
+			</figure>
+
+			<p>
+				Design Rationale for Sketch 2:
+			</p>
+
+			<ul>
+				<li>
+					Linear Layout for Clarity:
+					
+					This redesign replaces the original spiral with a straightforward line chart, positioning time on the horizontal axis and new COVID-19 cases on the vertical axis. By doing so, it becomes much easier to see how case counts rise and fall over the months, enabling quick comparisons across 2020, 2021, and 2022.
+					</li>
+				<li>Common Baseline for Comparability:
+
+					All three years share the same baseline (y=0), so the relative heights of each peak are directly comparable. This helps viewers understand not just that Omicron was higher than previous surges, but also approximately by how much, addressing the obscured comparisons in the spiral design.
+					</li>
+				<li>Contextual Annotations:
+
+					Labeling key events like “lockdown starts,” “Delta wave,” and “Omicron spike” grounds the data in real-world happenings. These annotations clarify why certain spikes appear and make the narrative more intuitive for viewers who may not recall exact timelines.
+					</li>
+
+				<li>
+					Next Steps and Considerations:
+
+				While the line chart is far more interpretable than the spiral, it's hard to compare peaks since there is no overlapping data and all the lines exist on the same axis. For my next design I want to explore color intensity as my primary visual encoding.
+				</li>
+			</ul>
+
+			<figure>
+				<img src="plots/sketch3.png" width="100%" height="100%" alt="" />
+				<figcaption>
+          This heatmap shows average monthly COVID-19 case counts from 2020 to 2022, with darker shades indicating higher numbers of cases. Each row represents a year, and each column represents a month, allowing viewers to quickly compare how case levels changed across different periods.
+				</figcaption>
+			</figure>
+
+			<p>
+				Design Rationale for Sketch 3:
+			</p>
+
+			<ul>
+				<li>Discrete Value Encoding:
+
+					This redesign replaces the original spiral with a heatmap, where each cell’s color indicates the number of new COVID-19 cases in a given month and year. By mapping case counts to color intensity, the visualization makes it straightforward to see which months had relatively higher or lower numbers, without the complexities of a spiral or radial layout.
+				</li>
+				<li>Common Color Scale for Comparability:
+
+					A single color scale is applied across all rows and columns, allowing direct comparisons between different years (2020, 2021, 2022) and months (January through December). Because each cell references the same scale, viewers can quickly identify where case counts were highest, even across different time periods.
+				</li>
+				<li>Eliminating Radial Distortion:
+
+					Unlike a spiral plot, this grid-based layout has no radial distortion, ensuring that each month’s data is equally spaced and easily comparable. The grid emphasizes discrete time units, so each month-year cell can be interpreted independently or in the context of surrounding cells.
+				</li>
+				<li>
+					Critique and Future Directions:
+
+					While color blocks are effective for spotting broad patterns, they can make it harder to extract exact values or subtle differences if the color scale isn’t finely tuned. 
+				</li>
+			</ul>
+		</section>
+
+		<section>
+			<h2>Final Visualization Design</h2>
+      
+			<figure>
+				<iframe src="plots/polished.html" width="100%" height="800px"></iframe>
+				<figcaption>
+          This radial chart encodes weekly COVID-19 case data for 2020, 2021, and 2022 in concentric rings, with bars representing weekly averages and color-coded lines showing the 7-day rolling average for each year. The radial angles correspond to weeks of the year, and month boundaries are marked around the circle. Each ring’s baseline is offset from the previous one by a distance corresponding to roughly 300k cases, ensuring the bars don’t overlap and visually emphasizing how the different years compare. This design highlights seasonal patterns and makes it easier to see how the pandemic evolved over time.
+				</figcaption>
+			</figure>
+
+		</section>
+
+		<section>
+			<h2>Design Process & Design Decisions</h2>
+
+			<p>
+        This visualization aims to clearly convey weekly COVID-19 case trends, and the scale of the Omicron peak from 2020 to 2022 in a more interpretable radial layout, addressing the confusion often introduced by a spiral graph. First, the data is aggregated by ISO week, and I compute both a weekly average of new cases and a 7-day rolling average to smooth out short-term fluctuations, as the daily data is missing weekend entries causing a spiky line plot. I then map each year to a distinct concentric ring, which helps the reader compare different years side by side without having to untangle overlapping spirals. The bar wedges represent average weekly cases, while a separate line encodes the 7-day rolling average; I chose these marks to highlight both raw weekly behavior (via bar heights) and smoothed trends (via the lines) allowing viewers to easily get a sense of the progression of COVID cases throughout a year. I further transform the bar data with a scale factor of 150,000 to reduce the height of the largest peaks, preventing them from overpowering the rest of the chart. By using separate rings, along with month spokes and labels around the outer edge, I preserve the circular “clock-like” view of time but make year-to-year comparisons more straightforward. I chose to make the distances between the rings equal to 300,000 COVID cases and added a fourth ring past 2022 to allow for relative comparisons of the cases between years even though they are on different radial rings, indicating it on the legend.
+			</p>
+			
+			<p>
+In terms of visual encodings, each ring is color-coded by year: blue for 2020, orange for 2021, and red for 2022. This color choice provides immediate visual separation, while the ring baselines (2.5, 4.0, and 5.5) are spaced apart to allow for slight overlap without cluttering the plot. To provide additional references, I draw dashed circular guides to mark key radii and add an annotation indicating that the gap between two dashed lines is roughly 300k cases. The radial angle is derived from the week number, ensuring a complete 360° cycle for each year. The combination of bar wedges (for weekly means) and lines (for rolling averages) allows viewers to see both the individual weekly fluctuations and the broader trajectory within each year. I appreciated the use of dotted radial spokes every 30°—labeled with month names— to further ground the viewer in time in the original plot and retain that for my redesign.
+
+      </p>
+
+      <h3>Reflection</h3>
+
+      <p>
+				This final design responds directly to critiques that the original spiral obscured comparative insights and forced readers to interpret multiple time periods along one confusing path. By separating each year onto its own ring, the magnitude of the 2022 peak is easier to see relative to the 2021 peak, and the chart as a whole is less cluttered. Additionally, the use of the dashed circular guides indicating 300k cases allows for easier spatial comparisons which I felt was difficult in the original’s design of an area reference in the legend. I acknowledge that radial layouts can still be more challenging than a straightforward line chart, but the circular motif offers a unique perspective on yearly patterns and seasonality that I quite enjoyed from the original plot. While this design addresses most of the critiques—especially by making it clearer how much higher the 2022 peak is compared to previous years—some trade offs remain, such as requiring the viewer to interpret radial distances and still compare different circular baselines. Nevertheless, the “critique by redesign” process helped highlight the importance of clear baselines, color-coding, and reference annotations, ultimately leading to a more interpretable and visually engaging depiction of the data.
+      </p>
+		</section>
+	</main>
+</body>
+</html>
